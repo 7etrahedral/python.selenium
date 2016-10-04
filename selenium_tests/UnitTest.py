@@ -1,4 +1,6 @@
 import unittest
+import allure
+import pytest
 from selenium.webdriver.common.keys import Keys
 from proboscis import test
 from SeleniumSetup import SeleniumSetup
@@ -6,6 +8,10 @@ from SeleniumSetup import SeleniumSetup
 
 class UnitTest(SeleniumSetup):
 
+    @allure.feature('feature 1')
+    @allure.story('story 1')
+    @pytest.allure.testcase('test-case 1')
+    @pytest.allure.issue('issue 1')
     @test
     def test_search_in_python_org(self):
         wd = self.wd
